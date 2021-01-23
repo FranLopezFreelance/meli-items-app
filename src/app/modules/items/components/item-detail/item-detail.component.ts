@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
@@ -21,6 +22,8 @@ export class ItemDetailComponent implements OnInit {
     private router: Router,
     private itemsService: ItemsService,
     private eventsService: AppEventsService,
+    private titleService: Title,
+    private metaService: Meta
   ) { }
 
   ngOnInit(): void {
@@ -39,14 +42,23 @@ export class ItemDetailComponent implements OnInit {
       })
     ).subscribe((response: IItemResponse | any) => {
       if (!response) {
+        // Si no hay Id, redirijo al root
         this.router.navigate(['/']);
       } else {
         this.item = response.item;
         this.categories = response.categories;
+        // Seteo el título y metatags de la página
+        this.setTitleAndMeta();
       }
     }, (error) => {
-      console.log(error);
+      alert(error);
+      this.router.navigate(['/']);
     });
+  }
+
+  setTitleAndMeta(): void {
+    this.titleService.setTitle(`${this.item.title} | Mercadolibre.`);
+    this.metaService.updateTag({name: 'description', content: `${this.item.description}.`});
   }
 
 }

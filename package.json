@@ -11,7 +11,8 @@
     "dev:ssr": "ng run meli-items-app:serve-ssr",
     "serve:ssr": "node dist/meli-items-app/server/main.js",
     "build:ssr": "ng build --prod && ng run meli-items-app:server:production",
-    "prerender": "ng run meli-items-app:prerender"
+    "prerender": "ng run meli-items-app:prerender --routes /items/id",
+    "serve-prerender": "http-server -c-1 dist/meli-items-app/browser"
   },
   "private": true,
   "dependencies": {
@@ -39,6 +40,7 @@
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
+    "http-server": "^0.12.3",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~5.2.0",
