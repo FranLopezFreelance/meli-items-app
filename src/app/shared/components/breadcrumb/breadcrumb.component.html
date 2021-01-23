@@ -1,1 +1,13 @@
-<p>breadcrumb works!</p>
+<div class="breadcrumb-box">
+  <ul class="breadcrumb" *ngIf="categories">
+    <li
+      class="category"
+      *ngFor="let category of categories; let i = index"
+    >
+      <span *ngIf="i > 0">></span>
+      <span [ngClass]="verifyLast(i)">
+        {{ category }}
+      </span>
+    </li>
+  </ul>
+</div>

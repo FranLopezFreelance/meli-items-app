@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-breadcrumb',
@@ -6,9 +6,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BreadcrumbComponent implements OnInit {
 
+  @Input() categories!: string[];
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  verifyLast(i: number): string {
+    return (this.categories && i === this.categories?.length - 1) ? 'last' : '';
   }
 
 }
