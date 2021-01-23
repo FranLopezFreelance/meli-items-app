@@ -18,7 +18,7 @@ export class ItemResponse {
       condition: data.condition,
       free_shipping: data.shipping.free_shipping,
       sold_quantity: data.sold_quantity,
-      picture: data.pictures[0],
+      picture: data.pictures[0].url,
     };
   }
 

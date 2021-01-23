@@ -38,12 +38,12 @@ export class ResultsComponent implements OnInit, OnDestroy {
           // Si hay query hago la consulta
           return this.itemsService.getSearch(this.query);
         }
-      })).subscribe((results: any) => {
-        if (!results) {
+      })).subscribe((response: ISearchResponse | any) => {
+        if (!response) {
           this.router.navigate(['/']);
         } else {
-          this.items = results.items;
-          this.categories = results.categories;
+          this.items = response.items;
+          this.categories = response.categories;
         }
       }, (error) => {
         console.log(error);

@@ -1,1 +1,36 @@
-<p>item-detail works!</p>
+<app-breadcrumb [categories]=categories></app-breadcrumb>
+
+<div class="section-container flex" *ngIf="item">
+  <div class="item-detail">
+    <div class="image-container">
+      <img [src]=item?.picture />
+    </div>
+    <div class="item-description">
+      <h3 class="description-title">Descripción del producto</h3>
+      <p class="description">{{ item?.description }}</p>
+    </div>
+  </div>
+  <div class="detail-container">
+    <div class="detail-header">
+      <span class="condition">{{ item?.condition | condition }}</span>
+      <span class="sold"> - {{ item?.sold_quantity }} vendidos</span>
+    </div>
+    <h4 class="title">{{ item?.title }}</h4>
+    <div class="price">
+      <span class="base-price">
+        $ {{ (item?.price?.amount) || 0 | amount }}
+      </span>
+      <span class="decimals">
+        <!-- TODO -->
+        <!-- {{ (item?.price?.decimals) || 0 }} -->
+        00
+      </span>
+    </div>
+    <button
+      class="buy-button"
+      tabindex="0"
+    >
+      Comprar
+    </button>
+  </div>
+</div>

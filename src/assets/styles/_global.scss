@@ -9,3 +9,18 @@ html, body {
   width: 900px;
   margin: 0px auto;
 }
+
+.section-container {
+  background-color: white;
+  border-radius: 6px;
+  padding: 40px;
+}
+
+.footer {
+  height: 40px;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: nowrap;
+}
