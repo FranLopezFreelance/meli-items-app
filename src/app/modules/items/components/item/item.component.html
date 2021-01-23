@@ -1,1 +1,30 @@
-<p>item works!</p>
+<div class="item-box">
+  <div class="image-box">
+    <img
+      class="item-image"
+      height="150px"
+      [src]=item.picture
+      [alt]=item.title
+      [title]=item.title
+      (click)="goToItemDetail(item.id)"
+    />
+  </div>
+  <div class="description-box">
+    <p>
+      <span
+        class="item-price"
+        [title]=item.title
+        (click)="goToItemDetail(item.id)"
+      >
+        $ {{ item.price.amount | amount }}
+      </span>
+      <span
+        class="free-shipping"
+        *ngIf="item.free_shipping"
+      ></span>
+    </p>
+    <p class="title">
+      {{item.title}}
+    </p>
+  </div>
+</div>

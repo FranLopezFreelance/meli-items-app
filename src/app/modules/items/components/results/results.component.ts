@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { of, Subscription } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
@@ -11,7 +11,7 @@ import { ISearchResponse } from 'src/app/models/ISearchResponse';
   selector: 'app-results',
   templateUrl: './results.component.html'
 })
-export class ResultsComponent implements OnInit {
+export class ResultsComponent implements OnInit, OnDestroy {
 
   items!: Item[];
   categories!: string[];
@@ -49,6 +49,16 @@ export class ResultsComponent implements OnInit {
         console.log(error);
         this.router.navigate(['/']);
       });
+  }
+
+  goToItemDetail(id: string): void {
+    this.router.navigate([`/items/${id}`]);
+  }
+
+  ngOnDestroy(): void {
+    if (this.routeSubs) {
+      this.routeSubs.unsubscribe();
+    }
   }
 
 }

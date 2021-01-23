@@ -15,6 +15,7 @@ export interface Item {
     amount: number;
     decimals: number;
   };
+  picture: string;
   condition: string;
   free_shipping: boolean;
 }

@@ -1,1 +1,11 @@
 <app-breadcrumb [categories]=categories></app-breadcrumb>
+
+<div class="results-container" *ngIf="items?.length">
+  <app-item
+    *ngFor="let item of items; let i = index"
+    [item]=item
+    [tabindex]="i+4"
+    (keyup.enter)="goToItemDetail(item.id)"
+  >
+  </app-item>
+</div>
