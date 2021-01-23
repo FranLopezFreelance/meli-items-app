@@ -1,9 +1,11 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AppEventsService {
 
-  constructor() { }
+  clearInputSearch: EventEmitter<boolean> = new EventEmitter();
+  setInputSearch: EventEmitter<string> = new EventEmitter();
+
 }

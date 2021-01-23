@@ -1,1 +1,31 @@
-<p>search-box works!</p>
+<div class="search-box-container">
+  <div class="container">
+    <img
+      class="logo"
+      src="assets/images/logo.png"
+      alt="Logo Mercado Libre"
+      height="40"
+      routerLink="/"
+      tabindex="3"
+    />
+    <div class="input-box">
+      <input
+        class="input-search"
+        type="text"
+        name="search"
+        #inputSearch
+        placeholder="Nunca dejes de buscar"
+        [(ngModel)]="query"
+        (keydown.enter)="search()"
+        tabindex="1"
+      />
+      <button
+        class="search-button"
+        (click)="search()"
+        tabindex="2"
+      >
+        <span class="search-icon"></span>
+      </button>
+    </div>
+  </div>
+</div>
