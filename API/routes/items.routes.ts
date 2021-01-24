@@ -10,13 +10,14 @@ const itemsRouter = Router();
 itemsRouter.get('/items', (req: Request, res: Response) => {
 
   const query = req.query.q;
+  console.log(query);
 
   if (query) {
-    const url = `https://api.mercadolibre.com/sites/MLA/search?q=${query}`;
+    const url = `https://api.mercadolibre.com/sites/MLA/search?q=${query}&limit=4`;
     const urlCategories = `https://api.mercadolibre.com/categories/`;
 
     const getData = (urlData: string): Observable<any> => {
-      return from(axios.get(urlData));
+      return from(axios.get(encodeURI(urlData)));
     };
 
     const getCategories = (urlCat: string, categoryId: any): Observable<any> => {
@@ -25,7 +26,7 @@ itemsRouter.get('/items', (req: Request, res: Response) => {
 
     getData(url).pipe(
       map(meliResponse => new SearchResponse(meliResponse.data)),
-      mergeMap((searchResponse: SearchResponse) => getCategories(urlCategories, searchResponse.category_id).pipe(
+      mergeMap((searchResponse: SearchResponse) => getCategories(urlCategories, searchResponse.categoryId).pipe(
         map(meliCatResponse => {
           searchResponse.setCategories(meliCatResponse.data);
           return searchResponse;
@@ -34,10 +35,11 @@ itemsRouter.get('/items', (req: Request, res: Response) => {
     ).subscribe(response => {
       res.json(response);
     }, (error) => {
-      res.json(error);
+      console.log(error);
+      res.status(500).json(error);
     });
   } else {
-    // TODO
+    res.status(400).json({error: 'Faltan parámetros requeridos'});
   }
 });
 
@@ -68,7 +70,7 @@ itemsRouter.get('/items/:id', (req: Request, res: Response) => {
           item.setDescription(meliDescResponse.data.plain_text);
           return item;
         }),
-        mergeMap((itemResponse: ItemResponse) => getCategories(urlCategories, itemResponse.item.category_id).pipe(
+        mergeMap((itemResponse: ItemResponse) => getCategories(urlCategories, itemResponse.item.categoryId).pipe(
           map(meliCatResponse => {
             itemResponse.setCategories(meliCatResponse.data);
             return itemResponse;
@@ -78,11 +80,12 @@ itemsRouter.get('/items/:id', (req: Request, res: Response) => {
     ).subscribe(response => {
       res.json(response);
     }, (error) => {
-      res.json(error);
+      console.log(error);
+      res.status(500).json(error);
     });
 
   } else {
-    // TODO
+    res.status(400).json({error: 'Faltan parámetros requeridos'});
   }
 });
 

@@ -1,5 +1,6 @@
 .items__item__item-box {
   display: flex;
+  flex-wrap: nowrap;
   border-bottom: 1px solid $extra-light-gray;
   padding: 16px;
 }
@@ -19,8 +20,8 @@
 }
 
 .items__item__description-box {
-  width: 440px;
-  padding: 0px;
+  width: 640px;
+  padding-right: 32px;
   margin: 16px;
 }
 
@@ -41,9 +42,16 @@
   margin-top: -4px;
 }
 
-
 .items__item__item-title {
   font-size: 18px;
   margin-top: 32px;
-  // line-height: 24px;
 }
+
+.items__item__item-state {
+  width: 200px;
+  font-size: 12px;
+  font-weight: 200;
+  padding-top: 18px;
+}
+
+

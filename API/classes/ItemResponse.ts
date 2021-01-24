@@ -8,7 +8,7 @@ export class ItemResponse {
     this.categories = [];
     this.item = {
       id: data.id,
-      category_id: data.category_id,
+      categoryId: data.category_id,
       title: data.title,
       price: {
         currency: data.currency_id,
@@ -45,7 +45,7 @@ interface Author {
 
 interface Item {
   id: string;
-  category_id: string;
+  categoryId: string;
   title: string;
   price: Price;
   picture: string;

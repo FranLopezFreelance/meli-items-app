@@ -1,6 +1,6 @@
 export class SearchResponse {
   author: Author;
-  category_id?: string;
+  categoryId?: string;
   categories: string[];
   items: Item[];
 
@@ -8,8 +8,8 @@ export class SearchResponse {
     this.author = {name: 'Francisco', lastname: 'López'};
     this.categories = [];
     this.items = data.results.map((result: any) => {
-      if(!this.category_id){
-        this.category_id = result.category_id;
+      if (!this.categoryId){
+        this.categoryId = result.category_id;
       }
       const item: Item = {
         id: result.id,
@@ -21,13 +21,14 @@ export class SearchResponse {
         },
         picture: result.thumbnail,
         condition: result.condition,
-        free_shipping: result.shipping.free_shipping
+        free_shipping: result.shipping.free_shipping,
+        state_name: result.address.state_name
       };
       return item;
     });
   }
 
-  setCategories(data: any) {
+  setCategories(data: any): void {
     data.path_from_root.forEach((category: any) => {
       this.categories.push(category.name);
     });
@@ -39,9 +40,8 @@ export class SearchResponse {
   }
 }
 
-
 interface Author {
-  name: string,
+  name: string;
   lastname: string;
 }
 
@@ -52,11 +52,11 @@ interface Item {
   picture: string;
   condition: string;
   free_shipping: boolean;
+  state_name: string;
 }
 
 interface Price {
-  currency: string,
+  currency: string;
   amount: number;
   decimals: number;
 }
-
