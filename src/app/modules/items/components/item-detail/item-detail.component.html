@@ -1,33 +1,33 @@
 <app-breadcrumb [categories]=categories></app-breadcrumb>
 
-<div class="section-container flex" *ngIf="item">
-  <div class="item-detail">
-    <div class="image-container">
-      <img [src]=item?.picture />
+<div class="global__layout__section-container global__layout__flex" *ngIf="item">
+  <div class="items__item-detail__item-image-box">
+    <div class="items__item-detail__image-container">
+      <img [src]=item?.picture width="680" />
     </div>
-    <div class="item-description">
-      <h3 class="description-title">Descripción del producto</h3>
-      <p class="description">{{ item?.description }}</p>
+    <div class="items__item-detail__item-description">
+      <h3 class="items__item-detail__description-title">Descripción del producto</h3>
+      <p class="items__item-detail__description">{{ item?.description }}</p>
     </div>
   </div>
-  <div class="detail-container">
-    <div class="detail-header">
-      <span class="condition">{{ item?.condition | condition }}</span>
-      <span class="sold"> - {{ item?.sold_quantity }} vendidos</span>
+  <div class="items__item-detail__detail-container">
+    <div class="items__item-detail__detail-header">
+      <span class="items__item-detail__condition">{{ item?.condition | condition }}</span>
+      <span class="items__item-detail__sold"> - {{ item?.sold_quantity }} vendidos</span>
     </div>
-    <h4 class="title">{{ item?.title }}</h4>
-    <div class="price">
-      <span class="base-price">
+    <h4 class="items__item-detail__title">{{ item?.title }}</h4>
+    <div class="items__item-detail__price">
+      <span class="items__item-detail__base-price">
         $ {{ (item?.price?.amount) || 0 | amount }}
       </span>
-      <span class="decimals">
+      <span class="items__item-detail__decimals">
         <!-- TODO -->
         <!-- {{ (item?.price?.decimals) || 0 }} -->
         00
       </span>
     </div>
     <button
-      class="buy-button"
+      class="global__buttons__buy-button"
       tabindex="0"
     >
       Comprar

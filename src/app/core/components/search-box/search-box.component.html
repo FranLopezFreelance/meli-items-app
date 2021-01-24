@@ -1,7 +1,7 @@
-<div class="search-box-container">
-  <div class="container">
+<div class="shared__search-box__search-box-container">
+  <div class="global__layout__container global__layout__flex">
     <img
-      class="logo"
+      class="shared__search-box__logo"
       src="assets/images/logo.png"
       alt="Logo Mercado Libre"
       height="40"
@@ -9,9 +9,9 @@
       title="Meli Items App"
       tabindex="3"
     />
-    <div class="input-box">
+    <div class="shared__search-box__input-box">
       <input
-        class="input-search"
+        class="shared__search-box__input-search"
         type="text"
         name="search"
         #inputSearch
@@ -21,12 +21,12 @@
         tabindex="1"
       />
       <button
-        class="search-button"
+        class="shared__search-box__search-button"
         (click)="search()"
         title="Buscar"
         tabindex="2"
       >
-        <span class="search-icon"></span>
+        <span class="shared__search-box__search-icon"></span>
       </button>
     </div>
   </div>

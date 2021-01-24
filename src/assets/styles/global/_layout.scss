@@ -1,0 +1,44 @@
+p, h1, h2, h3, h4 {
+  margin: 0px;
+  padding: 0px;
+}
+
+html, body {
+  margin: 0px;
+  height: 100vh;
+  background-color: $extra-light-gray;
+  font-family: 'Montserrat', sans-serif;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $light-gray;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: $light-gray;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: $light-gray;
+}
+
+.global__layout__container {
+  width: 1050px;
+  margin: 0px auto;
+}
+
+.global__layout__section-container {
+  background-color: white;
+  border-radius: 6px;
+  padding: 0px 16px;
+}
+
+.global__layout__footer {
+  height: 40px;
+}
+
+.global__layout__flex {
+  display: flex;
+  flex-wrap: nowrap;
+}

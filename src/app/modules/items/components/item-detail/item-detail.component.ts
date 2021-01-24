@@ -51,13 +51,13 @@ export class ItemDetailComponent implements OnInit {
         this.setTitleAndMeta();
       }
     }, (error) => {
-      alert(error);
+      alert('Ha ocurrido un error. ');
       this.router.navigate(['/']);
     });
   }
 
   setTitleAndMeta(): void {
-    this.titleService.setTitle(`${this.item.title} | Mercadolibre.`);
+    this.titleService.setTitle(`${this.item.title} | MercadoLibre.com.ar`);
     this.metaService.updateTag({name: 'description', content: `${this.item.description}.`});
   }
 

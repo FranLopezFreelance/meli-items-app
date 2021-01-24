@@ -1,7 +1,7 @@
-<div class="item-box">
-  <div class="image-box">
+<div class="items__item__item-box">
+  <div class="items__item__image-box">
     <img
-      class="item-image"
+      class="items__item__item-image"
       height="150px"
       [src]=item.picture
       [alt]=item.title
@@ -9,21 +9,21 @@
       (click)="goToItemDetail(item.id)"
     />
   </div>
-  <div class="description-box">
+  <div class="items__item__description-box">
     <p>
       <span
-        class="item-price"
+        class="items__item__item-price"
         [title]=item.title
         (click)="goToItemDetail(item.id)"
       >
         $ {{ item.price.amount | amount }}
       </span>
       <span
-        class="free-shipping"
+        class="items__item__free-shipping"
         *ngIf="item.free_shipping"
       ></span>
     </p>
-    <p class="title">
+    <p class="items__item__item-title">
       {{item.title}}
     </p>
   </div>

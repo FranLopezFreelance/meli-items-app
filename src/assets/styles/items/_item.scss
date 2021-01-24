@@ -1,34 +1,36 @@
-.item-box {
+.items__item__item-box {
   display: flex;
   border-bottom: 1px solid $extra-light-gray;
-  padding: 20px 0px;
+  padding: 16px;
 }
 
-.image-box {
-  margin-right: 40px;
+.items__item__image-box {
+  margin-right: 16px;
   padding: 0px;
-  width: 150px;
-  width: 150px;
+  width: 180px;
+  width: 180px;
   border-radius: 4px;
   overflow:hidden;
 }
 
-.item-image {
+.items__item__item-image {
   margin: 0px;
   cursor: pointer;
 }
 
-.description-box {
+.items__item__description-box {
   width: 440px;
+  padding: 0px;
+  margin: 16px;
 }
 
-.item-price {
+.items__item__item-price {
   font-weight: 400;
-  font-size: 22px;
+  font-size: 24px;
   cursor: pointer;
 }
 
-.free-shipping {
+.items__item__free-shipping {
   display: inline-block;
   margin-left: 10px;
   width: 20px;
@@ -40,6 +42,8 @@
 }
 
 
-.title {
-  line-height: 24px;
+.items__item__item-title {
+  font-size: 18px;
+  margin-top: 32px;
+  // line-height: 24px;
 }

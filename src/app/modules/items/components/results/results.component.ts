@@ -51,14 +51,14 @@ export class ResultsComponent implements OnInit, OnDestroy {
           this.items = response.items;
           this.categories = response.categories;
         }
-      }, (error) => {
-        alert(error);
+      }, () => {
+        alert('Ha ocurrido un error. ');
         this.router.navigate(['/']);
       });
   }
 
   setTitleAndMeta(): void {
-    this.titleService.setTitle(`"${this.query}" en Mercadolibre.`);
+    this.titleService.setTitle(`"${this.query}" | MercadoLibre.com.ar`);
     this.metaService.updateTag({name: 'description', content: `Resultados de búsqueda para ${this.query} en Mercadolibre.`});
   }
 
