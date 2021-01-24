@@ -10,7 +10,6 @@ const itemsRouter = Router();
 itemsRouter.get('/items', (req: Request, res: Response) => {
 
   const query = req.query.q;
-  console.log(query);
 
   if (query) {
     const url = `https://api.mercadolibre.com/sites/MLA/search?q=${query}&limit=4`;

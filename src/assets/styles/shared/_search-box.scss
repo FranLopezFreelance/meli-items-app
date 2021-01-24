@@ -1,17 +1,17 @@
-.shared__search-box__search-box-container {
+.search-box-container {
   background-color: $yellow-meli;
   height: 52px;
   padding-top: 10px;
 }
 
-.shared__search-box__logo {
+.logo {
   margin-right: 20px;
   margin-top: 2px;
   cursor: pointer;
 }
 
-.shared__search-box__input-box {
-  width: 978px;
+.input-box {
+  width: 992px;
   height: 38px;
   margin: 0px;
   padding: 0px;
@@ -23,9 +23,9 @@
   background-color: white;
 }
 
-.shared__search-box__input-search {
+.input-search {
   border: 1px solid transparent;
-  width: 932px;
+  width: 978px;
   border-radius: 4px;
   border: none;
   padding: 10px;
@@ -41,7 +41,7 @@
   }
 }
 
-.shared__search-box__search-button {
+.search-button {
   display: block;
   background-color: $extra-light-gray;
   border: none;
@@ -57,7 +57,7 @@
   }
 }
 
-.shared__search-box__search-icon {
+.search-icon {
   display: block;
   width: 20px;
   height: 20px;
