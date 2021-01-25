@@ -1,7 +1,7 @@
-<div class="shared__breadcrumbs__breadcrumb-box">
-  <ul class="shared__breadcrumbs__breadcrumb" *ngIf="categories">
+<div class="breadcrumb-box">
+  <ul class="breadcrumb" *ngIf="categories">
     <li
-      class="shared__breadcrumbs__category"
+      class="category"
       *ngFor="let category of categories; let i = index"
     >
       <span *ngIf="i > 0">></span>

@@ -1,8 +1,9 @@
-.shared__breadcrumbs__breadcrumb-box {
-  padding: 16px 0px;
+.breadcrumb-box {
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
-.shared__breadcrumbs__breadcrumb {
+.breadcrumb {
   margin: 0px;
   padding: 0px;
   height: 40;
@@ -15,6 +16,6 @@
   }
 }
 
-.shared__breadcrumbs__last {
+.last {
   font-weight: 400!important;
 }

@@ -50,7 +50,7 @@ export class ItemDetailComponent implements OnInit {
         // Seteo el título y metatags de la página
         this.setTitleAndMeta();
       }
-    }, (error) => {
+    }, () => {
       alert('Ha ocurrido un error. ');
       this.router.navigate(['/']);
     });

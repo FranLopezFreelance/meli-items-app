@@ -34,7 +34,6 @@ itemsRouter.get('/items', (req: Request, res: Response) => {
     ).subscribe(response => {
       res.json(response);
     }, (error) => {
-      console.log(error);
       res.status(500).json(error);
     });
   } else {
@@ -79,7 +78,6 @@ itemsRouter.get('/items/:id', (req: Request, res: Response) => {
     ).subscribe(response => {
       res.json(response);
     }, (error) => {
-      console.log(error);
       res.status(500).json(error);
     });
 

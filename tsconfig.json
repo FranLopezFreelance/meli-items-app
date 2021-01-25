@@ -19,8 +19,10 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "types": ["cypress"]
   },
+  "include": ["**/*.ts"],
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,

@@ -9,14 +9,16 @@
   margin-right: 16px;
   padding: 0px;
   width: 180px;
-  width: 180px;
+  height: 180px;
   border-radius: 4px;
   overflow:hidden;
 }
 
-.item-image {
+.results-item-image {
   margin: 0px;
   cursor: pointer;
+  width: 180px;
+  border-radius: 4px;
 }
 
 .description-box {
@@ -53,5 +55,15 @@
   font-weight: 200;
   padding-top: 18px;
 }
+
+/* @media (max-width: 1100px) {
+  .image-box {
+    width: 180px;
+  }
+
+  .item-image {
+    width: 100px;
+  }
+} */
 
 

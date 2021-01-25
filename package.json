@@ -8,6 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
     "dev:ssr": "ng run meli-items-app:serve-ssr",
     "serve:ssr": "node dist/meli-items-app/server/main.js",
     "build:ssr": "ng build --prod && ng run meli-items-app:server:production",

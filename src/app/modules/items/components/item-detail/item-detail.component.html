@@ -2,9 +2,7 @@
 
 <div class="global__layout__section-container global__layout__flex" *ngIf="item">
   <div class="item-image-box">
-    <div class="image-container">
-      <img [src]=item?.picture width="680" />
-    </div>
+    <img [src]=item?.picture class="item-image" />
     <div class="item-description">
       <h3 class="description-title">Descripción del producto</h3>
       <p class="description">{{ item?.description }}</p>
@@ -26,11 +24,13 @@
         00
       </span>
     </div>
-    <button
-      class="global__buttons__buy-button"
-      tabindex="0"
-    >
-      Comprar
-    </button>
+    <div class="buy-button-box">
+      <button
+        class="global__buttons__buy-button"
+        tabindex="0"
+      >
+        Comprar
+      </button>
+    </div>
   </div>
 </div>
