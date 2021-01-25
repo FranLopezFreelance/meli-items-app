@@ -14,7 +14,7 @@ export class BreadcrumbComponent implements OnInit {
   }
 
   verifyLast(i: number): string {
-    return (this.categories && i === this.categories?.length - 1) ? 'shared__breadcrumbs__last' : '';
+    return (this.categories && i === this.categories?.length - 1) ? 'last' : '';
   }
 
 }
