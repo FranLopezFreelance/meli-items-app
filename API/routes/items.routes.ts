@@ -7,7 +7,7 @@ import { ItemResponse } from '../classes/ItemResponse';
 
 const itemsRouter = Router();
 
-itemsRouter.get('/items', (req: Request, res: Response) => {
+itemsRouter.get('/', (req: Request, res: Response) => {
 
   const query = req.query.q;
 
@@ -47,7 +47,7 @@ itemsRouter.get('/items', (req: Request, res: Response) => {
   }
 });
 
-itemsRouter.get('/items/:id', (req: Request, res: Response) => {
+itemsRouter.get('/:id', (req: Request, res: Response) => {
 
   const id = req.params.id;
   if (id) {

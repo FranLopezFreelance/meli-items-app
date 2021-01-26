@@ -23,7 +23,7 @@ export function app(): express.Express {
   server.use(express.urlencoded({ extended: true }));
   server.use(express.json());
   // API endpoints
-  server.use('/api', itemsRouter);
+  server.use('/api/items', itemsRouter);
 
   // Serve static files
   server.get('*.*', express.static(distFolder, {
