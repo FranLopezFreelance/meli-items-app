@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { BreadcrumbComponent } from './breadcrumb.component';
 
 describe('BreadcrumbComponent', () => {
@@ -21,5 +20,10 @@ describe('BreadcrumbComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should return last', () => {
+    component.categories = ['Primera', 'Segunda', 'Tercera'];
+    expect(component.verifyLast(2)).toBe('last');
   });
 });

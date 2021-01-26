@@ -20,9 +20,9 @@
       "es2018",
       "dom"
     ],
-    "types": ["cypress"]
+    // "types": ["cypress"]
   },
-  "include": ["**/*.ts"],
+  // "include": ["**/*.ts"],
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,

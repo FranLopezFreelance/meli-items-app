@@ -5,6 +5,7 @@ export interface ISearchResponse {
   };
   items: Item[];
   categories: string[];
+  categoryId: string;
 }
 
 export interface Item {

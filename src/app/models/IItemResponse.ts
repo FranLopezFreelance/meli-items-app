@@ -9,6 +9,7 @@ export interface IItemResponse {
 
 export interface Item {
   id: string;
+  categoryId: string;
   title: string;
   price: {
     currency: string;
@@ -17,7 +18,7 @@ export interface Item {
   };
   picture: string;
   condition: string;
-  free_shiping: boolean;
+  free_shipping: boolean;
   sold_quantity: number;
   description: string;
 }

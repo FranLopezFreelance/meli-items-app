@@ -16,7 +16,7 @@ export class ItemsService {
     private http: HttpClient
   ) { }
 
-  getSearch(query: string): Observable<ISearchResponse> {
+  getResults(query: string): Observable<ISearchResponse> {
     return this.http.get<ISearchResponse>(`${this.url}/items?q=${query}`);
   }
 

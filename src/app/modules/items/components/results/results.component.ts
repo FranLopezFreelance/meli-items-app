@@ -29,32 +29,31 @@ export class ResultsComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    this.routeSubs = this.route.queryParamMap.pipe(
-      switchMap(params => {
-        this.query = params.get('search') || '';
-        // Seteo el título y metatags de la página
-        this.setTitleAndMeta();
-        // Envío los datos para popular el buscador si es que el usuario ingresó la búsqueda por URL
-        this.eventsService.setInputSearch.emit(this.query);
-        if (!this.query.length) {
-          // Si no hay datos redirijo al root en la subscripcion
-          return of(false);
-        } else {
-          // Si hay datos hago la consulta
-          return this.itemsService.getSearch(this.query);
-        }
-      })).subscribe((response: ISearchResponse | any) => {
-        if (!response) {
-          this.router.navigate(['/']);
-        } else {
-          // Obtengo items y categorías de la respuesta
-          this.items = response.items;
-          this.categories = response.categories;
-        }
-      }, () => {
-        alert('Ha ocurrido un error. ');
+    this.routeSubs = this.route.queryParamMap.subscribe(params => {
+      this.query = params.get('search') || '';
+      // Seteo el título y metatags de la página
+      this.setTitleAndMeta();
+      // Envío los datos para popular el buscador si es que el usuario ingresó la búsqueda por URL
+      this.eventsService.setInputSearch.emit(this.query);
+      if (!this.query.length) {
+        // Si no hay datos redirijo al root
         this.router.navigate(['/']);
-      });
+      } else {
+        // Si hay datos hago la consulta
+        this.getResults(this.query);
+      }
+    });
+  }
+
+  getResults(query: string): void {
+    this.itemsService.getResults(query).subscribe((response: ISearchResponse | any) => {
+      // Obtengo items y categorías de la respuesta
+      this.items = response.items;
+      this.categories = response.categories;
+    }, () => {
+      alert('Ha ocurrido un error. ');
+      this.router.navigate(['/']);
+    });
   }
 
   setTitleAndMeta(): void {
